@@ -1,0 +1,15 @@
+Phân số a/b lớn hơn phân số c/d ⇔ (ad - bc)/bd > 0. 
+Nếu dữ kiện cho a, b, c, d > 0, thì để so sánh 2 phân số, 
+ta chỉ cần so sánh ad - bc với 0 là được!!!
+
+
+int maxFraction(std::vector<int> numerators, std::vector<int> denominators)
+{
+    int cs = 0;
+    for (int i = 1; i < numerators.size(); i++){
+       if (numerators[cs] * denominators[i] < numerators[i] * denominators[cs]){
+           cs = i;
+       }
+    }
+    return cs;
+}
